@@ -13,6 +13,7 @@
       font-family: sans-serif;
       font-size: 20px;
       width: 100%;
+      min-height: 100vh; 
       overflow-y: hidden;
       border: none;
       resize: none;
@@ -31,7 +32,9 @@
     const tx = document.querySelector('.code');
     tx.addEventListener('input', function() {
       this.style.height = 'auto';
-      this.style.height = this.scrollHeight + 1000 + 'px';
+      if (this.scrollHeight > window.innerHeight) {
+        this.style.height = this.scrollHeight + 'px';
+      }
     });
   </script>
 </body>
