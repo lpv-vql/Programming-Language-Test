@@ -21,6 +21,7 @@
       font-size: 20px;
       width: 100%;
       min-height: 100vh; 
+      field-sizing: content;
       overflow-y: hidden;
       border: none;
       resize: none;
@@ -32,15 +33,5 @@
 </head>
 <body>
   <textarea class="code" spellcheck="false"></textarea>
-
-  <script>
-    const tx = document.querySelector('.code');
-    tx.addEventListener('input', function() {
-      this.style.height = 'auto';
-      if (this.scrollHeight > window.innerHeight) {
-        this.style.height = this.scrollHeight + 'px';
-      }
-    });
-  </script>
 </body>
 </html>
