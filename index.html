@@ -32,6 +32,19 @@
   </style>
 </head>
 <body>
-  <textarea class="code" spellcheck="false"></textarea>
+  <textarea id="editor" spellcheck="false"></textarea>
+  <script>
+    const editor = document.getElementById('editor');
+    const STORAGE_KEY = 'saved_code';
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedData = localStorage.getItem(STORAGE_KEY);
+      if (savedData) {
+        editor.value = savedData;
+      }
+    });
+    editor.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEY, editor.value);
+    });
+  </script>
 </body>
 </html>
